@@ -21,7 +21,10 @@ class RoI:
 
     def on_mouse(self, event, x, y, *kwargs):
         if event == cv2.EVENT_LBUTTONDOWN:
-            self.roi_pts.append((x, y))
+            if self.roi_check:
+                pass
+            else:
+                self.roi_pts.append((x, y))
         elif event == cv2.EVENT_RBUTTONDOWN:
             if self.roi_check:
                 self.roi_check = False
@@ -87,22 +90,22 @@ def main(args):
             "detection_area_norm": roi_pts_norm
         }
         with open(save_path, "w") as f:
-            json.dump(roi_info, f)
+            json.dump(roi_info, f, indent=4)
             print(f"\nroi information is saved in {save_path}")
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    vid_path = "/home/daton/Desktop/gs/loitering_gs/KISA_loitering_13.mp4"
-    vid_path = "/home/daton/Desktop/gs/intrusion_gs/KISA_intrusion_20.mp4"
-    vid_path = "/media/daton/SAMSUNG/4. 민간분야(2021 특수환경)/distribution/C123200_009.mp4"
+    #vid_path = "/home/daton/Desktop/gs/loitering_gs_v2/aihub_subway_cctv_4.mp4"
+    vid_path = "/home/daton/Desktop/gs/intrusion_gs_v2/KISA_intrusion_19.mp4"
+    #vid_path = "/media/daton/SAMSUNG/4. 민간분야(2021 특수환경)/distribution/C123200_009.mp4"
     parser.add_argument("--vid-path", type=str, default=vid_path)
 
     save = True
     parser.add_argument("--save", action="store_true", default=save)
 
-    event_type = "loitering"
+    event_type = "intrusion"
     parser.add_argument("--event-type", type=str, default=event_type)
 
     just_view = False

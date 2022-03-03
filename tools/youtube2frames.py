@@ -117,7 +117,7 @@ def parse_args():
     parser.add_argument("--target-size", type=int, default=target_size)
 
     parser.add_argument("--view", action="store_true", default=True)
-    parser.add_argument("--save", action="store_true", default=False)
+    parser.add_argument("--save", action="store_true", default=True)
     parser.add_argument("--save-mode", type=int, default=2)  # 1: images, 2: video
 
     args = parser.parse_args()
