@@ -98,7 +98,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     #vid_path = "/home/daton/Desktop/gs/loitering_gs_v2/aihub_subway_cctv_4.mp4"
-    vid_path = "/home/daton/Desktop/gs/intrusion_gs_v2/KISA_intrusion_19.mp4"
+    vid_path = "/home/daton/Desktop/gs/intrusion_gs_v2/KISA_intrusion_17.mp4"
     #vid_path = "/media/daton/SAMSUNG/4. 민간분야(2021 특수환경)/distribution/C123200_009.mp4"
     parser.add_argument("--vid-path", type=str, default=vid_path)
 
