@@ -1,4 +1,4 @@
-# Cut video from start and end frame
+# Cut video from start to end frame
 import argparse
 import os
 from pathlib import Path
@@ -43,7 +43,6 @@ def main(args):
             cv2.waitKey(1)
         if save:
             vid_writer.write(img)
-
 
 
 def time2timedelta(t):

@@ -15,7 +15,8 @@ def select_frames(img_dir, save_dir=None):
         img_path = os.path.join(img_dir, img_name)
         img = cv2.imread(img_path)
         cv2.imshow("img", img)
-        if cv2.waitKey(0) & 0xFF == ord('s'):
+        tmp_input = cv2.waitKey(0) & 0xFF
+        if tmp_input == ord('s'):
             save_path = os.path.join(save_dir, img_name)
             cv2.imwrite(save_path, img)
             print("save!")
