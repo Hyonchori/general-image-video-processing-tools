@@ -64,6 +64,7 @@ def parse_args():
     start_time = [0, 2, 54]
     start_time = [0, 3, 0]
     start_time = [0, 3, 0]
+    start_time = [0, 0, 0]
     parser.add_argument("--start-time", type=int, default=start_time)
 
     # [hours, minutes, seconds]
